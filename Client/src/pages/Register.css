@@ -1,0 +1,157 @@
+/* Register.css */
+:root {
+  --primary: #27ae60;
+  --primary-dark: #219653;
+  --secondary: #2c3e50;
+  --light: #f9f9f9;
+  --dark: #333;
+  --gray: #7f8c8d;
+  --light-gray: #ecf0f1;
+
+  --accent-green: #4CAF50;
+  --accent-orange: #FF8C00;
+  --header-bg-light: rgba(255, 255, 255, 0.95);
+  --footer-accent-bg: rgba(255, 255, 255, 0.1);
+  --footer-text-light: #e0e0e0;
+}
+
+.register-wrapper {
+  display: flex;
+  height: 100vh;
+  /* IMPROVEMENT: Background image with overlay */
+  background:
+    linear-gradient(rgba(245, 249, 247, 0.7), rgba(245, 249, 247, 0.361)), /* Semi-transparent light overlay */
+    url('../assets/register-bg.jpg') center center / cover no-repeat; /* Your background image */
+  /* Fallback color */
+  background-color: #f5f9f7;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', 'Segoe UI', sans-serif; /* Consistent font */
+  overflow: hidden;
+  box-sizing: border-box; /* Ensure padding/border included in element's total width/height */
+}
+
+.register-form-container {
+  background-color: #fff;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* More prominent shadow */
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  border: 1px solid var(--light-gray); /* Use theme light gray border */
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+.register-title {
+  margin-bottom: 10px;
+  font-size: 28px; /* Larger title */
+  font-weight: bold;
+  color: var(--secondary); /* Dark color from theme */
+}
+
+.register-subtitle {
+  margin-bottom: 30px;
+  color: var(--gray); /* Gray color from theme */
+  font-size: 16px;
+}
+
+.register-input {
+  width: 100%;
+  padding: 14px; /* More padding */
+  margin-bottom: 20px;
+  border-radius: 8px; /* More rounded */
+  border: 1px solid var(--light-gray); /* Use theme light gray border */
+  font-size: 16px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  box-sizing: border-box; /* Ensure padding/border included in width */
+}
+
+.register-input:focus {
+  border-color: var(--primary); /* Primary green on focus */
+  box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.2); /* Subtle green focus ring */
+  outline: none;
+}
+
+.register-button {
+  width: 100%;
+  padding: 14px; /* More padding */
+  background-color: var(--primary); /* Primary green from theme */
+  color: #fff;
+  border: none;
+  border-radius: 8px; /* More rounded */
+  font-size: 18px; /* Larger font */
+  font-weight: 600; /* Bolder */
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3); /* Add shadow */
+  text-transform: uppercase; /* Uppercase text */
+  letter-spacing: 0.5px;
+  box-sizing: border-box;
+}
+
+.register-button:hover {
+  background-color: var(--primary-dark); /* Darker green on hover */
+  transform: translateY(-2px); /* Subtle lift */
+  box-shadow: 0 8px 20px rgba(39, 174, 96, 0.4); /* Enhanced shadow on hover */
+}
+
+/* Error message styling */
+.error-message { /* Class name changed to error-message */
+  color: #e74c3c; /* Red color for errors */
+  margin-bottom: 15px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Link below form */
+.register-footer { /* New class for the paragraph below the button */
+  margin-top: 25px; /* More space */
+  color: var(--gray);
+  font-size: 15px;
+}
+
+.register-footer a {
+  color: var(--primary); /* Green for link */
+  text-decoration: none;
+  font-weight: 600; /* Bolder link */
+}
+
+.register-footer a:hover {
+  text-decoration: underline;
+}
+
+/* ADDED: Styles for the password toggle button and wrapper */
+.password-input-wrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.password-input-wrapper .register-input {
+  width: 100%;
+  padding-right: 40px; /* Make space for the icon */
+}
+
+.password-toggle-btn {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--gray);
+  font-size: 18px;
+  cursor: pointer;
+  transition: color 0.2s;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.password-toggle-btn:hover {
+  color: var(--primary);
+}

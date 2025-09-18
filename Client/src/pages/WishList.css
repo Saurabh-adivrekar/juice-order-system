@@ -1,0 +1,248 @@
+/* Wishlist.css */
+
+/* Important: Ensure these :root variables are accessible.
+   If Wishlist.css is a standalone file and doesn't implicitly get Home.css's :root,
+   you need to copy them over or import a shared variables file. */
+:root {
+  --primary: #27ae60;
+  --primary-dark: #219653;
+  --secondary: #2c3e50; /* This is your dark blue/gray */
+  --light: #f9f9f9; /* Near white */
+  --dark: #333;
+  --gray: #7f8c8d;
+  --light-gray: #ecf0f1;
+  --accent-orange: #FF8C00;
+}
+
+.wishlist-page-wrapper {
+  background-color: var(--light-gray); /* Light gray background for the entire page */
+  min-height: calc(100vh - 80px); /* Adjust based on header/footer height */
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  color: var(--dark);
+}
+
+.wishlist-header-section {
+  background-color: var(--secondary); /* Dark background as per design */
+  color: white;
+  padding: 40px 0; /* Vertical padding */
+  text-align: center;
+  position: relative;
+  display: flex; /* For aligning title and search button */
+  justify-content: center;
+  align-items: center;
+}
+
+.wishlist-page-title {
+  font-size: 48px; /* Large title as per design */
+  font-weight: 700;
+  margin: 0; /* Remove default margin */
+}
+
+.wishlist-search-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 28px; /* Size of search icon */
+  cursor: pointer;
+  position: absolute; /* Position to top right */
+  top: 20px;
+  right: 20px;
+  padding: 10px; /* Make it easier to click */
+  border-radius: 50%; /* Optional: for a button feel */
+  transition: background-color 0.2s;
+}
+
+.wishlist-search-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.wishlist-container {
+  padding: 40px 20px; /* Padding inside the container */
+  max-width: 900px; /* Container width for wishlist items */
+  margin: 0 auto; /* Center the container */
+}
+
+.empty-wishlist-message {
+  text-align: center;
+  padding: 50px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  font-size: 18px;
+  color: var(--gray);
+}
+
+.empty-wishlist-message a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.empty-wishlist-message a:hover {
+  text-decoration: underline;
+}
+
+.wishlist-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between wishlist item cards */
+}
+
+.wishlist-item-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  padding: 20px;
+  display: flex; /* Use flexbox for overall layout */
+  gap: 20px;
+  align-items: center; /* Vertically align items in the card */
+  position: relative; /* For the top-right remove button */
+}
+
+.item-main-content {
+  display: flex;
+  gap: 20px;
+  flex-grow: 1; /* Allows this section to take most space */
+  align-items: center;
+}
+
+.item-image {
+  width: 100px; /* Size of product image in wishlist */
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--light-gray);
+  flex-shrink: 0; /* Prevent image from shrinking */
+}
+
+.item-info {
+  flex-grow: 1;
+}
+
+.item-name {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--secondary);
+  margin-bottom: 5px;
+}
+
+.item-details-text {
+  font-size: 14px;
+  color: var(--gray);
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.item-price {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.item-actions {
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  gap: 10px;
+  flex-shrink: 0; /* Prevent buttons from shrinking */
+  min-width: 120px; /* Minimum width for the buttons section */
+}
+
+.add-to-cart-btn,
+.remove-btn {
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-align: center;
+}
+
+.add-to-cart-btn {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+}
+
+.add-to-cart-btn:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+.remove-btn {
+  background-color: var(--light-gray);
+  color: var(--gray);
+  border: 1px solid var(--gray);
+}
+
+.remove-btn:hover {
+  background-color: #e74c3c; /* Red on hover */
+  color: white;
+  border-color: #e74c3c;
+  transform: translateY(-1px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .wishlist-page-title {
+    font-size: 38px;
+  }
+
+  .wishlist-item-card {
+    flex-direction: column; /* Stack image and info on smaller screens */
+    align-items: flex-start;
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .item-main-content {
+    flex-direction: column; /* Stack image and info internally */
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .item-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .item-name {
+    font-size: 18px;
+  }
+
+  .item-actions {
+    flex-direction: row; /* Keep buttons side-by-side on smaller screen cards */
+    width: 100%;
+    justify-content: space-around;
+    min-width: unset;
+  }
+
+  .wishlist-search-button {
+    font-size: 24px;
+    top: 15px;
+    right: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .wishlist-page-title {
+    font-size: 32px;
+  }
+
+  .wishlist-header-section {
+    padding: 30px 0;
+  }
+
+  .wishlist-item-card {
+    padding: 10px;
+  }
+
+  .item-actions {
+    flex-wrap: wrap; /* Allow buttons to wrap */
+  }
+
+  .add-to-cart-btn,
+  .remove-btn {
+    flex-grow: 1; /* Allow buttons to grow and fill space */
+  }
+}

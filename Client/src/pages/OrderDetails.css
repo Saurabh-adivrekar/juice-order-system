@@ -1,0 +1,358 @@
+/* OrderDetails.css */
+
+/* Important: Ensure these :root variables are accessible.
+   If OrderDetails.css is a standalone file, copy them or import a shared file. */
+:root {
+  --primary: #27ae60;
+  --primary-dark: #219653;
+  --secondary: #2c3e50;
+  --light: #f9f9f9;
+  --dark: #333;
+  --gray: #7f8c8d;
+  --light-gray: #ecf0f1;
+  --accent-orange: #FF8C00;
+
+  /* Status Colors */
+  --status-delivered: var(--primary);
+  --status-shipped: #3498db; /* Blue */
+  --status-processing: #f39c12; /* Orange */
+  --status-cancelled: #e74c3c; /* Red */
+}
+
+.order-details-wrapper {
+  background-color: var(--light-gray); /* Overall page background */
+  padding: 50px 0; /* Vertical padding */
+  min-height: calc(100vh - 80px); /* Adjust for header/footer */
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  color: var(--dark);
+}
+
+.order-details-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.order-header {
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  margin-bottom: 30px;
+  text-align: center;
+  position: relative;
+}
+
+.order-id {
+  font-size: 32px;
+  color: var(--secondary);
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.order-meta {
+  font-size: 16px;
+  color: var(--gray);
+  margin-bottom: 20px;
+}
+
+.order-meta span {
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.order-status {
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: 700;
+  color: white;
+  margin-left: 10px;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+/* Status specific colors */
+.order-status.delivered { background-color: var(--status-delivered); }
+.order-status.shipped { background-color: var(--status-shipped); }
+.order-status.processing { background-color: var(--status-processing); }
+.order-status.cancelled { background-color: var(--status-cancelled); }
+
+.track-order-btn, .download-invoice-btn, .reorder-btn, .contact-support-btn {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px; /* Pill shape */
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  margin-top: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.track-order-btn:hover, .download-invoice-btn:hover, .reorder-btn:hover, .contact-support-btn:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.download-invoice-btn, .contact-support-btn {
+  background-color: var(--secondary); /* Darker button for secondary actions */
+}
+
+.download-invoice-btn:hover, .contact-support-btn:hover {
+  background-color: #2a415a; /* Darker secondary on hover */
+}
+
+
+.order-sections-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive columns */
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.section-card {
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--dark);
+}
+
+.section-title {
+  font-size: 20px;
+  color: var(--secondary);
+  font-weight: 700;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--light-gray);
+  padding-bottom: 10px;
+}
+
+/* Specific styling for sections */
+.customer-info p, .shipping-address p, .payment-info p {
+  margin-bottom: 5px;
+}
+
+.customer-info p:last-child, .shipping-address p:last-child {
+  margin-bottom: 0;
+}
+
+.payment-status {
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  color: white;
+  margin-left: 8px;
+  text-transform: uppercase;
+}
+
+.payment-status.paid { background-color: var(--primary); }
+.payment-status.pending { background-color: var(--status-processing); }
+.payment-status.failed { background-color: var(--status-cancelled); }
+
+
+.delivery-info {
+  font-style: italic;
+  color: var(--primary);
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+/* Ordered Items Table/List */
+.ordered-items-card {
+  margin-bottom: 30px;
+}
+
+.order-items-table {
+  display: flex;
+  flex-direction: column;
+}
+
+.table-header, .table-row {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr 1fr; /* Product | Unit Price | Quantity | Total */
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.table-header {
+  font-weight: 600;
+  color: var(--secondary);
+  font-size: 15px;
+  background-color: var(--light);
+  padding: 15px;
+  border-radius: 8px 8px 0 0;
+  margin-bottom: -1px; /* Overlap border */
+}
+
+.table-row:last-child {
+  border-bottom: none;
+}
+
+.product-cell {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.product-image {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--light-gray);
+}
+
+.product-name {
+  font-weight: 600;
+  color: var(--dark);
+  font-size: 16px;
+}
+
+.price-cell, .qty-cell, .total-cell {
+  font-weight: 500;
+  color: var(--dark);
+  font-size: 15px;
+}
+
+.total-cell {
+  font-weight: 700;
+  color: var(--primary);
+}
+
+
+/* Order Summary Totals */
+.order-summary-totals {
+  margin-bottom: 30px;
+  padding: 30px;
+}
+
+.order-summary-totals .summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: var(--dark);
+}
+
+.order-summary-totals .summary-row span:last-child {
+  font-weight: 600;
+}
+
+.order-summary-totals .summary-total-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px dashed var(--light-gray);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--secondary);
+}
+
+/* Bottom Action Buttons */
+.order-actions-bottom {
+  text-align: center;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .order-details-wrapper {
+    padding: 30px 0;
+  }
+
+  .order-details-container {
+    padding: 0 15px;
+  }
+
+  .order-header {
+    padding: 20px;
+  }
+
+  .order-id {
+    font-size: 26px;
+  }
+
+  .order-sections-grid {
+    grid-template-columns: 1fr; /* Stack sections on mobile */
+    gap: 20px;
+  }
+
+  .section-card {
+    padding: 20px;
+  }
+
+  .order-items-table {
+    padding: 0; /* Remove padding from table overall container */
+  }
+
+  .table-header {
+    display: none; /* Hide table header on small screens */
+  }
+
+  .table-row {
+    grid-template-columns: 1fr; /* Stack items vertically */
+    gap: 10px;
+    text-align: left;
+    padding: 15px;
+  }
+
+  .product-cell {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .product-image {
+    width: 50px;
+    height: 50px;
+  }
+
+  .price-cell, .qty-cell, .total-cell {
+    width: 100%;
+    text-align: left;
+    padding-left: 70px; /* Align text with product name */
+    position: relative;
+  }
+  
+  .price-cell::before { content: 'Unit Price: '; font-weight: 600; color: var(--secondary); margin-right: 5px; }
+  .qty-cell::before { content: 'Quantity: '; font-weight: 600; color: var(--secondary); margin-right: 5px; }
+  .total-cell::before { content: 'Item Total: '; font-weight: 600; color: var(--secondary); margin-right: 5px; }
+
+  .order-summary-totals {
+    padding: 20px;
+  }
+
+  .order-actions-bottom {
+    flex-direction: column; /* Stack action buttons */
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .order-id {
+    font-size: 22px;
+  }
+  .order-meta {
+    font-size: 14px;
+  }
+  .section-title {
+    font-size: 18px;
+  }
+  .track-order-btn, .download-invoice-btn, .reorder-btn, .contact-support-btn {
+    width: 100%; /* Full width buttons */
+    max-width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

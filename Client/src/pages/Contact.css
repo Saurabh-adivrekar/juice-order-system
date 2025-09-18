@@ -1,0 +1,125 @@
+/* Contact.css */
+
+/* Using colors from Home.css :root variables for consistency */
+:root {
+  --primary: #27ae60;
+  --primary-dark: #219653;
+  --secondary: #2c3e50;
+  --light: #f9f9f9;
+  --dark: #333;
+  --gray: #7f8c8d;
+  --light-gray: #ecf0f1;
+}
+
+.contact-page-wrapper {
+  background-color: var(--light-gray);
+  padding: 80px 0;
+  min-height: calc(100vh - 80px); /* Adjust based on header/footer height */
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  color: var(--dark);
+}
+
+.contact-container {
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.contact-title {
+  font-size: 38px;
+  color: var(--secondary);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.contact-subtitle {
+  font-size: 18px;
+  color: var(--gray);
+  margin-bottom: 40px;
+}
+
+.contact-form {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 8px;
+}
+
+.contact-input,
+.contact-textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid var(--light-gray);
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  box-sizing: border-box;
+  background-color: var(--light);
+}
+
+.contact-input:focus,
+.contact-textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.2);
+  outline: none;
+}
+
+.contact-textarea {
+  resize: vertical;
+}
+
+.contact-submit-btn {
+  width: 100%;
+  padding: 15px;
+  background-color: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 4px 10px rgba(39, 174, 96, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.contact-submit-btn:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(39, 174, 96, 0.3);
+}
+
+.contact-submit-btn:disabled {
+  background-color: var(--gray);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .contact-container {
+    padding: 30px 20px;
+  }
+  .contact-title {
+    font-size: 32px;
+  }
+}

@@ -1,0 +1,187 @@
+/* About.css */
+:root {
+  --primary: #27ae60;
+  --primary-dark: #219653;
+  --secondary: #2c3e50;
+  --light: #f9f9f9;
+  --dark: #333;
+  --gray: #7f8c8d;
+  --light-gray: #ecf0f1;
+
+  --accent-green: #4CAF50;
+  --accent-orange: #FF8C00;
+  --header-bg-light: rgba(255, 255, 255, 0.98);
+  --footer-accent-bg: rgba(255, 255, 255, 0.08);
+  --footer-text-light: #e0e0e0;
+  --text-color-light: #f0f0f0;
+}
+
+.about-page-wrapper {
+  background-color: var(--light-gray);
+  min-height: 100vh;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  color: var(--dark);
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Hero Section */
+.about-hero {
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 150px 0;
+  text-align: center;
+  position: relative;
+}
+
+.about-hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-title {
+  font-size: 52px;
+  font-weight: 700;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  line-height: 1.2;
+}
+
+/* Standard Section Styles */
+.about-section {
+  background-color: #fff;
+  padding: 80px 0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  margin-bottom: 40px;
+}
+
+.section-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section-heading {
+  font-size: 40px;
+  color: var(--secondary);
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.section-content p {
+  font-size: 18px;
+  color: var(--gray);
+  line-height: 1.8;
+}
+
+/* Philosophy/Promise Section */
+.philosophy-section {
+  background-color: var(--light);
+  padding: 80px 0;
+  text-align: center;
+}
+
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.philosophy-item {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.philosophy-icon {
+  font-size: 45px;
+  color: var(--primary);
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.philosophy-item h3 {
+  font-size: 24px;
+  color: var(--secondary);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.philosophy-item p {
+  font-size: 15px;
+  color: var(--gray);
+}
+
+/* Call to Action Section */
+.call-to-action-section {
+  background-color: var(--secondary);
+  color: white;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.cta-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cta-heading {
+  font-size: 44px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.cta-subheading {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 40px;
+}
+
+.cta-button {
+  background-color: var(--accent-orange);
+  color: white;
+  text-decoration: none;
+  padding: 16px 40px;
+  border-radius: 35px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(255, 140, 0, 0.3);
+}
+
+.cta-button:hover {
+  background-color: #E67A00;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 140, 0, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-title {
+    font-size: 42px;
+  }
+  .section-heading, .cta-heading {
+    font-size: 32px;
+  }
+  .section-content p, .cta-subheading {
+    font-size: 16px;
+  }
+  .philosophy-item {
+    padding: 30px;
+  }
+}
+@media (max-width: 480px) {
+  .about-title {
+    font-size: 32px;
+  }
+  .section-heading, .cta-heading {
+    font-size: 28px;
+  }
+}
